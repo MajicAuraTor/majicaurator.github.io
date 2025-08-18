@@ -10,6 +10,7 @@ import projectRoutes from './routes/projects.js';
 import experienceRoutes from './routes/experiences.js';
 import contactRoutes from './routes/contacts.js';
 import authRoutes from './routes/auth.js';
+import contactFormRoute from './routes/contact.js';
 
 dotenv.config();
 const prisma = new PrismaClient();
@@ -28,6 +29,7 @@ app.use('/api/projects', projectRoutes);
 app.use('/api/experiences', experienceRoutes);
 app.use('/api/contacts', contactRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/contact', contactFormRoute);
 
 // Health check
 app.get('/api/health', (req, res) => {

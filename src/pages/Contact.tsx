@@ -22,12 +22,18 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // In a real app, this would POST to your backend API
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      
-      console.log('Form submitted:', formData);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        const errorData = await response.json();
+        console.error('Error submitting form:', errorData.error);
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {

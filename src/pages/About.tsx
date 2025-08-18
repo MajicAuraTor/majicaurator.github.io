@@ -3,28 +3,34 @@ import { MapPin, Calendar, Award, Target } from 'lucide-react';
 const About = () => {
   const timeline = [
     {
-      company: 'Pulse Consulting',
-      role: 'Data Analyst',
-      period: '2023 - Present',
-      description: 'Leading data analysis initiatives and delivering strategic insights for enterprise clients.'
-    },
-    {
-      company: 'i.c.stars',
-      role: 'Technical Project Manager',
-      period: '2022 - 2023',
+      company: 'i.c.stars | * Chicago',
+      role: 'Full Stack Developer and Scrum Master',
+      period: '2025 - Present',
       description: 'Managed full-stack development projects and coordinated cross-functional teams.'
     },
     {
-      company: 'Luminus Data Solutions',
-      role: 'Business Analyst',
-      period: '2021 - 2022',
+      company: 'Scattrd',
+      role: 'Chief Executive Officer',
+      period: '2025 - Present',
+      description: 'Leading data analysis initiatives and delivering strategic insights for enterprise clients.'
+    },
+    {
+      company: 'Luminous Data Solutions',
+      role: 'Data Analyst Intern',
+      period: '2024 - Present',
       description: 'Analyzed business requirements and optimized data workflows for improved efficiency.'
     },
     {
       company: 'Amplify',
-      role: 'Junior Developer',
-      period: '2020 - 2021',
-      description: 'Built responsive web applications and contributed to open-source projects.'
+      role: 'Professional Development Coordinator',
+      period: '2020 - 2023',
+      description: 'Analyzed business requirements and optimized data workflows for improved efficiency.'
+    },
+    {
+      company: 'Amplify',
+      role: 'Tier 1 Support Specialist',
+      period: '2019 - 2020',
+      description: 'Provided technical support and troubleshooting assistance to clients, ensuring high levels of customer satisfaction.'
     }
   ];
 
@@ -70,25 +76,16 @@ const About = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Professional Summary</h2>
             <div className="prose prose-lg text-gray-700 space-y-4">
               <p>
-                Jatore M. Price is a dynamic professional who seamlessly combines analytical expertise 
-                with technical project management to deliver exceptional results. With a proven track 
-                record of transforming complex data into strategic business insights, she has consistently 
-                driven organizational success through data-driven decision making.
+                Jatore M. Price is a results-driven professional with a strong emphasis on data analysis and performance improvement. Her career is defined by overcoming technical challenges—including complex git issues—and consistently delivering solutions that enhance team coordination and support. 
               </p>
               <p>
-                Her journey through leading organizations like Amplify, Luminus Data Solutions, i.c.stars, 
-                and currently Pulse Consulting has equipped her with a unique perspective on how technology 
-                and data analysis can be leveraged to solve real-world business challenges.
+                Through roles at organizations such as Amplify, Luminous Data Solutions, i.c.stars, and Scattrd, Jatore has demonstrated the ability to translate data into actionable insights, streamline workflows, and drive measurable improvements. She values feedback from mentors and staff, using it to refine her approach and achieve project goals.
               </p>
               <p>
-                As a technical project manager, Jatore excels at coordinating cross-functional teams, 
-                implementing Agile methodologies, and ensuring project deliverables align with business 
-                objectives. Her full-stack development background enables her to bridge the communication 
-                gap between technical teams and business stakeholders effectively.
+                Jatore excels at supporting and coordinating cross-functional teams, implementing Agile methodologies, and leveraging both her technical and interpersonal skills to foster collaboration and ensure high-quality outcomes. Her experience spans full-stack development, data analysis, project management and technical support, making her a versatile asset in any environment.
               </p>
               <p>
-                Beyond her technical skills, Jatore is passionate about mentoring emerging professionals 
-                and contributing to initiatives that promote diversity and inclusion in the technology sector.
+                Open to new opportunities, Jatore is passionate about contributing to missions where Data, AI, and Technology play a central role in driving impact and innovation.
               </p>
             </div>
           </div>
