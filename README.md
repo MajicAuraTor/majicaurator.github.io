@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Jatore M. Price Portfolio
 
 A modern, full-stack portfolio website built with React, TypeScript, Vite, Express.js, and PostgreSQL.
@@ -94,7 +94,5 @@ project/
 4. Start development with `npm run dev`
 
 The application is ready to run once the database is configured!
-=======
-# PortfolioPage
-Here is my Portfolio Page, an overview of all my skills and projects.
->>>>>>> efa0e845b06a81cfa441ba1337bc9c4df9951661
+
+
