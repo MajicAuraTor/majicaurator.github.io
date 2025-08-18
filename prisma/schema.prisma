@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  tools       String   // Changed from String[] to String (JSON or comma-separated)
+  role        String
+  outcome     String
+  image       String?
+  githubUrl   String?
+  liveUrl     String?
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("projects")
+}
+
+model Experience {
+  id          String   @id @default(cuid())
+  title       String
+  company     String
+  duration    String
+  description String   // Changed from String[] to String (JSON or comma-separated)
+  current     Boolean  @default(false)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("experiences")
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+
+  @@map("contacts")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+
+  @@map("users")
+}
