@@ -7,6 +7,8 @@ import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
+import PowerBIDemo from './pages/PowerBIDemo';
+import ProjectPlan from './pages/ProjectPlan';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/powerbidemodemo" element={<PowerBIDemo />} />
+            <Route path="/project-plan" element={<ProjectPlan />} />
           </Routes>
         </main>
         <Footer />

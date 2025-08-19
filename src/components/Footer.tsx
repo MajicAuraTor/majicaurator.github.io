@@ -38,7 +38,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/jatore"
+                href="https://github.com/MajicAuraTor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
@@ -46,7 +46,7 @@ const Footer = () => {
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com/in/jatore"
+                href="https://www.linkedin.com/in/jatore-price/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
@@ -54,7 +54,7 @@ const Footer = () => {
                 <Linkedin className="h-6 w-6" />
               </a>
               <a
-                href="mailto:jatore@example.com"
+                href="mailto:jprice@icstars.org"
                 className="text-gray-300 hover:text-white transition-colors"
               >
                 <Mail className="h-6 w-6" />

@@ -30,19 +30,19 @@ const Projects = () => {
             description: 'Comprehensive data visualization dashboard that transformed raw business data into actionable insights, resulting in 30% improvement in decision-making speed.',
             tools: ['Power BI', 'SQL', 'Excel', 'DAX'],
             role: 'Data Analyst',
-            outcome: 'Increased data-driven decisions by 30% and reduced reporting time by 50%',
+            outcome: 'Revealed seasonal sales peaks and product profitability trends to drive strategic business decisions.',
             image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
             featured: true
           },
           {
             id: '2',
             title: 'Recover App (Full Stack)',
-            description: 'Complete CRUD application built with React, Express.js, and PostgreSQL featuring user authentication, role-based access, dark mode, and responsive design.',
-            tools: ['React', 'TypeScript', 'Express.js', 'PostgreSQL', 'Tailwind CSS'],
+            description: 'Complete CRUD application built with React, Express.js, and MySQL featuring user authentication, role-based access, dark mode, and responsive design.',
+            tools: ['React', 'TypeScript', 'Express.js', 'MySQL', 'Tailwind CSS'],
             role: 'Full Stack Developer',
-            outcome: 'Successfully delivered scalable web application with 99.9% uptime',
+            outcome: 'Successfully delivered scalable web application with 99.9% uptime.',
             image: 'https://images.pexels.com/photos/574070/pexels-photo-574070.jpeg?auto=compress&cs=tinysrgb&w=800',
-            githubUrl: 'https://github.com/jatore',
+            githubUrl: 'https://github.com/MajicAuraTor/RecoverApp',
             liveUrl: 'https://recover-app.vercel.app',
             featured: true
           },
@@ -50,7 +50,7 @@ const Projects = () => {
             id: '3',
             title: 'Pulse Consulting Case Study',
             description: 'Led cross-functional team in delivering strategic technology solutions for enterprise client, managing project timeline and stakeholder communications.',
-            tools: ['JIRA', 'Salesforce', 'Power BI', 'Project Management'],
+            tools: ['Planner', 'Salesforce', 'Power BI', 'Project Management'],
             role: 'Technical Project Manager',
             outcome: 'Delivered project 2 weeks ahead of schedule with 95% client satisfaction',
             image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -95,6 +95,8 @@ const Projects = () => {
             full-stack development, and strategic project management
           </p>
         </div>
+
+  {/* ...existing code... */}
 
         {/* Featured Projects */}
         {featuredProjects.length > 0 && (
@@ -205,7 +207,24 @@ const ProjectCard: React.FC<{ project: Project; featured: boolean }> = ({ projec
               Code
             </a>
           )}
-          {project.liveUrl && (
+          {/* Custom Live Demo for Power BI Dashboard */}
+          {project.title === 'Power BI Dashboard' ? (
+            <a
+              href="/powerbidemodemo"
+              className="flex items-center px-3 py-2 text-blue-600 hover:text-blue-700 border border-blue-300 rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              <ExternalLink className="h-4 w-4 mr-2" />
+              Live Demo
+            </a>
+          ) : project.title === 'Project Management Case Study' ? (
+            <a
+              href="/project-plan"
+              className="flex items-center px-3 py-2 text-purple-700 hover:text-purple-900 border border-purple-300 rounded-lg hover:bg-purple-50 transition-colors"
+            >
+              <ExternalLink className="h-4 w-4 mr-2" />
+              View Project Plan
+            </a>
+          ) : project.liveUrl && (
             <a
               href={project.liveUrl}
               target="_blank"

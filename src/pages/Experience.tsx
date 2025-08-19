@@ -22,54 +22,65 @@ const Experience = () => {
         const mockExperiences: Experience[] = [
           {
             id: '1',
-            title: 'Data Analyst',
-            company: 'Pulse Consulting',
-            duration: '2023 - Present',
-            description: [
-              'Developed automated reporting systems that reduced manual work by 60%',
-              'Led data migration projects for enterprise clients',
-              'Created interactive dashboards for executive leadership',
-              'Collaborated with cross-functional teams to identify business insights'
-            ],
+            title: 'Full Stack Developer & Project Manager Intern',
+            company: 'i.c.stars | Chicago',
+            duration: 'May 2025 – Present',
+              description: [
+                'Lead sprint ceremonies and release coordination for an Agile team using Microsoft Planner (Kanban) and GitHub Actions (CI/CD), keeping milestones on track through clear status updates and tracking.',
+                'Presented sprint demos and status updates; communicated timelines, risks, and next steps in plain language.',
+                'Translated client feedback into actionable user stories and tasks, re-prioritized backlog accordingly.',
+                'Facilitated daily stand-ups, sprint planning and reviews to keep team aligned on sprint goals.',
+                'Managed the backlog and Kanban board in Microsoft Planner; set priorities, owners, and due dates.',
+                'Developed and maintained responsive user interfaces with React (and Next.js), delivering 2+ new features per sprint to improve engagement.',
+                'Designed and migrated relational database schemas using Prisma ORM and MySQL, ensuring scalable and normalized data structures.',
+                'Developed and consumed RESTful APIs with Node.js and Express, integrating them with a MySQL database for full CRUD operations on user data.'
+              ],
             current: true
           },
           {
             id: '2',
-            title: 'Technical Project Manager',
-            company: 'i.c.stars',
-            duration: '2022 - 2023',
-            description: [
-              'Managed full-stack development projects from conception to deployment',
-              'Coordinated cross-functional teams of 8+ developers and designers',
-              'Implemented Agile methodologies resulting in 40% faster delivery',
-              'Facilitated stakeholder meetings and maintained project documentation'
-            ],
+            title: 'Data Analyst Intern',
+            company: 'Luminous Data Solutions, LLC',
+            duration: 'July 2024 – Present',
+              description: [
+                'Executed SQL queries to retrieve, analyze and troubleshoot datasets, supporting both internal teams and external client requests.',
+                'Maintained project records by organizing datasets and verifying accuracy for analysis.',
+                'Led data preparation and cleaning efforts, transforming raw data into usable formats by identifying and correcting inconsistencies.',
+                'Troubleshot network connectivity issues during data transfer processes, ensuring uninterrupted data flow and minimizing downtime.',
+                'Conducted data cleaning and preparation to align datasets with project requirements.'
+              ],
             current: false
           },
           {
             id: '3',
-            title: 'Business Analyst',
-            company: 'Luminus Data Solutions',
-            duration: '2021 - 2022',
-            description: [
-              'Analyzed business requirements and translated them into technical specifications',
-              'Optimized data workflows resulting in 25% efficiency gains',
-              'Collaborated with stakeholders to define project scope and deliverables',
-              'Created comprehensive documentation for business processes'
-            ],
+            title: 'Professional Development Coordinator',
+            company: 'Amplify',
+            duration: 'Jun 2020 – Oct 2023',
+              description: [
+                'Coordinated schedules and deliverables for high-value client accounts (avg. ~$250K), ensuring resources were aligned and milestones met.',
+                'Built Salesforce dashboards/reports to track KPIs and surface risks; delivered periodic written updates and presentations to leadership.',
+                'Monitored SLAs, escalated blockers early, and drove closure with clear ownership and deadlines.',
+                'Utilized Operations protocols and CRM tools (e.g. Salesforce) to ensure proper documentation of service calls and emails.',
+                'Created a standard process and knowledge base article and best practices for other PD Coordinators.',
+                'Leveraged interpersonal skills to maintain excellent relationships with cross functional teams.',
+                'Designed and delivered Salesforce training for coordinators covering dashboard and reports; created slide deck, quick-reference guide and recorded walkthrough.',
+                'Promoted from Tier 1 Support Specialist to Professional Development Coordinator within 1 year.'
+              ],
             current: false
           },
           {
             id: '4',
-            title: 'Junior Developer',
+            title: 'Tier 1 Support Specialist',
             company: 'Amplify',
-            duration: '2020 - 2021',
-            description: [
-              'Built responsive web applications using React and Node.js',
-              'Participated in code reviews and maintained high code quality standards',
-              'Contributed to open-source projects and internal tooling',
-              'Collaborated with senior developers on complex features'
-            ],
+            duration: 'Jul 2019 – Jun 2020',
+              description: [
+                'Provided front-line support via phone, chat and email; achieved 95% first-contact resolution while meeting response and resolution SLAs.',
+                'Triaged and prioritized inbound tickets; documented clear steps-to-reproduce, case notes, severity/impact, and status in Salesforce.',
+                'Performed initial troubleshooting to reproduce issues. Isolate root causes and apply known workarounds; escalated to Tier 2/Engineering with complete context.',
+                'Communicated status, next steps and ETAs to users and stakeholders; followed up after fixes to confirm resolution and user satisfaction.',
+                'Authored and maintained internal knowledge base articles, troubleshooting guides and response templates to drive consistency and faster resolution.',
+                'Contributed to onboarding by shadowing new agents. Demonstrating ticket hygiene standards and sharing best practices for clear, empathetic communication.'
+              ],
             current: false
           }
         ];
@@ -99,17 +110,12 @@ const Experience = () => {
     {
       icon: Calendar,
       label: 'Years of Experience',
-      value: '5+'
+      value: '7+'
     },
     {
       icon: Users,
       label: 'Projects Managed',
-      value: '50+'
-    },
-    {
-      icon: TrendingUp,
-      label: 'Success Rate',
-      value: '95%'
+    value: '15+'
     },
     {
       icon: MapPin,
@@ -125,21 +131,22 @@ const Experience = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Professional Experience
+            <br className='hidden lg:block' />
+            <span className="text-lg font-medium text-blue-700">Project Planning, Analysis, & Creativity</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A journey through roles that have shaped expertise in data analysis, 
-            project management, and full-stack development
+            A journey through roles that have shaped expertise in data analysis, project management, and full-stack development
           </p>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+  <div className="flex justify-center items-center gap-8 mb-16">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-200"
+                className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-200 w-64 h-56 flex flex-col justify-center items-center"
               >
                 <div className="bg-gradient-to-br from-blue-600 to-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Icon className="h-6 w-6 text-white" />
