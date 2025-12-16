@@ -47,14 +47,33 @@ app.use('*', (req, res) => {
   res.status(404).json({ error: 'Route not found' });
 });
 
+const attemptListen = (port, retries = 5) => {
+  return new Promise((resolve, reject) => {
+    const server = app.listen(port);
+
+    server.on('listening', () => {
+      resolve({ server, port });
+    });
+
+    server.on('error', (err) => {
+      if (err && err.code === 'EADDRINUSE' && retries > 0) {
+        console.warn(`Port ${port} in use, trying ${port + 1}...`);
+        // Try next port
+        resolve(attemptListen(port + 1, retries - 1));
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+
 const startServer = async () => {
   try {
     await prisma.$connect();
     console.log('✅ Connected to database');
-    
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on port ${PORT}`);
-    });
+
+    const { port } = await attemptListen(Number(PORT));
+    console.log(`🚀 Server running on port ${port}`);
   } catch (error) {
     console.error('❌ Failed to start server:', error);
     process.exit(1);

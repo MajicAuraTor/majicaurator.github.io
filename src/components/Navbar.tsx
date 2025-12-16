@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User } from 'lucide-react';
+import { Menu, X, User, ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [experienceDropdownOpen, setExperienceDropdownOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
@@ -11,8 +12,15 @@ const Navbar = () => {
     { name: 'About', href: '/about' },
     { name: 'Skills', href: '/skills' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Experience', href: '/experience' },
     { name: 'Contact', href: '/contact' },
+  ];
+
+  const experienceSubmenu = [
+    { name: 'Overview', href: '/experience' },
+    { name: 'Career', href: '/career' },
+    { name: 'Leadership', href: '/leadership' },
+    { name: 'Technology', href: '/technology' },
+    { name: 'Wellness', href: '/wellness' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -45,6 +53,46 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Experience Dropdown */}
+            <div className="relative">
+              <button
+                onMouseEnter={() => setExperienceDropdownOpen(true)}
+                onMouseLeave={() => setExperienceDropdownOpen(false)}
+                className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  experienceSubmenu.some(item => isActive(item.href))
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                }`}
+              >
+                Experience
+                <ChevronDown className="h-4 w-4 ml-1" />
+              </button>
+              
+              {experienceDropdownOpen && (
+                <div
+                  onMouseEnter={() => setExperienceDropdownOpen(true)}
+                  onMouseLeave={() => setExperienceDropdownOpen(false)}
+                  className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-50"
+                >
+                  {experienceSubmenu.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                        isActive(item.href)
+                          ? 'text-blue-600 bg-blue-50'
+                          : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      } ${item === experienceSubmenu[0] ? 'rounded-t-md' : ''} ${
+                        item === experienceSubmenu[experienceSubmenu.length - 1] ? 'rounded-b-md' : ''
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -77,6 +125,25 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Mobile Experience Submenu */}
+            <div className="pt-2 border-t border-gray-200">
+              <div className="px-3 py-2 text-sm font-medium text-gray-500">Experience</div>
+              {experienceSubmenu.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-6 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                    isActive(item.href)
+                      ? 'text-blue-600 bg-blue-50'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       )}

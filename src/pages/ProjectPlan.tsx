@@ -14,7 +14,7 @@ const planSections = [
     title: 'Choose Your Lane (fast)',
     content: [
       'Use a 2-week Decision Sprint to sample roles before you lock in a lane for applications.',
-      'Lane options: Data Analyst, Analytics Engineer, Data Engineer, ML/GenAI Engineer, AI/Data-savvy PM/PO.'
+      'Lane options: Data Analyst, Technical Project Manager, Data Engineer, ML/GenAI Engineer, AI/Data-savvy PM/PO.'
     ]
   },
   {
@@ -29,11 +29,10 @@ const planSections = [
     title: 'Certification Menu',
     content: [
       'AI-900 Azure AI Fundamentals',
-      'DP-900 Azure Data Fundamentals',
+      'Data Camp Python',
       'PL-300 Power BI Data Analyst',
       'AZ-900 Azure Fundamentals or AWS Cloud Practitioner',
-      'Databricks Lakehouse Fundamentals',
-      'dbt Fundamentals'
+      'Certified Project Manager',
     ]
   },
   {

@@ -24,7 +24,7 @@ const About = () => {
       company: 'Amplify',
       role: 'Professional Development Coordinator',
       period: '2020 - 2023',
-      description: 'Analyzed business requirements and optimized data workflows for improved efficiency.'
+      description: 'Partnered with cross-functional teams to streamline workflows, enhance reporting accuracy, and strengthen internal processes.'
     },
     {
       company: 'Amplify',

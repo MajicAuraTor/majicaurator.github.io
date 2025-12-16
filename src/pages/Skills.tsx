@@ -73,6 +73,12 @@ const Skills = () => {
       issuer: 'Data Camp',
       year: '2025'
     }
+  ,
+    {
+      title: 'CompTIA Tech+',
+      issuer: 'CompTIA',
+      year: '2025'
+    }
   ];
 
   // Demo 1: Featured Skill Carousel

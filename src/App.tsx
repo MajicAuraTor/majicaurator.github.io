@@ -9,6 +9,10 @@ import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import PowerBIDemo from './pages/PowerBIDemo';
 import ProjectPlan from './pages/ProjectPlan';
+import Career from './pages/Career';
+import Leadership from './pages/Leadership';
+import Technology from './pages/Technology';
+import Wellness from './pages/Wellness';
 
 function App() {
   return (
@@ -25,6 +29,10 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/powerbidemodemo" element={<PowerBIDemo />} />
             <Route path="/project-plan" element={<ProjectPlan />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/leadership" element={<Leadership />} />
+            <Route path="/technology" element={<Technology />} />
+            <Route path="/wellness" element={<Wellness />} />
           </Routes>
         </main>
         <Footer />

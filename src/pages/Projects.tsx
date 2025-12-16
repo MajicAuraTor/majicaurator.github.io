@@ -48,11 +48,11 @@ const Projects = () => {
           },
           {
             id: '3',
-            title: 'Pulse Consulting Case Study',
+            title: 'Project Manager Case Study',
             description: 'Led cross-functional team in delivering strategic technology solutions for enterprise client, managing project timeline and stakeholder communications.',
             tools: ['Planner', 'Salesforce', 'Power BI', 'Project Management'],
-            role: 'Technical Project Manager',
-            outcome: 'Delivered project 2 weeks ahead of schedule with 95% client satisfaction',
+            role: 'Project Manager',
+            outcome: 'Enabled seamless collaboration and project delivery by implementing agile practices and clear communication, resulting in improved team efficiency and stakeholder satisfaction.',
             image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
             featured: true
           }
@@ -193,6 +193,18 @@ const ProjectCard: React.FC<{ project: Project; featured: boolean }> = ({ projec
             <strong>Impact:</strong> {project.outcome}
           </p>
         </div>
+        {/* View Project Plan Button for Project Manager Case Study */}
+        {project.title === 'Project Manager Case Study' && (
+          <div className="mb-4">
+            <a
+              href="/project-plan"
+              className="flex items-center px-3 py-2 text-purple-700 hover:text-purple-900 border border-purple-300 rounded-lg hover:bg-purple-50 transition-colors"
+            >
+              <ExternalLink className="h-4 w-4 mr-2" />
+              View Project Plan
+            </a>
+          </div>
+        )}
         
         {/* Links */}
         <div className="flex gap-3">
